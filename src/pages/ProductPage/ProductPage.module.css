@@ -1,0 +1,201 @@
+/* src/pages/ProductPage/ProductPage.module.css */
+
+.page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+}
+
+/* Галерея */
+.gallery {
+  display: flex;
+  gap: 1rem;
+}
+
+.thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thumbBtn {
+  border: 2px solid transparent;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.thumbBtn.active {
+  border-color: #005cff;
+}
+
+.thumbBtn img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.mainImageWrap {
+  flex: 1;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.mainImage {
+  max-width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Деталі */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.priceBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.currentPrice {
+  font-weight: 700;
+  font-size: 64px;
+}
+
+.oldPrice {
+  font-weight: 500;
+  font-size: 40px;
+  text-decoration: line-through;
+  color: #8b8b8b;
+}
+
+.discountBadge {
+  background: #005cff;
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  align-self: flex-start;
+}
+
+/* Кількість та кнопка */
+.controls {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+}
+
+.qtyBtn {
+  width: 5rem;
+  height: 100%;
+  font-size: 1.2rem;
+  border: 1px solid #dddddd;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.qty {
+  width: 5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  font-size: 1rem;
+}
+
+.addButton {
+  margin-left: 3rem;
+  width: 90%;
+  height: 100%;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.addedButton {
+  margin-left: 3rem;
+  width: 90%;
+  height: 100%;
+  border: 1px solid #282828;
+  background: transparent;
+  color: #282828;
+  font-weight: 600;
+  font-size: 1.25rem;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.addButton:hover {
+  background: #282828;
+  color: #fff;
+}
+
+/* Опис */
+.description h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #282828;
+}
+
+.description p {
+  margin: 1.5rem 0 0;
+  line-height: 1.5;
+  color: #555;
+}
+
+.readMore {
+  background: none;
+  border: none;
+  color: #282828;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .gallery {
+    flex-direction: row;
+  }
+  .thumbs {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .thumbBtn img {
+    width: 60px;
+    height: 60px;
+  }
+}

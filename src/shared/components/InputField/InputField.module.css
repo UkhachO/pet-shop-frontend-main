@@ -1,0 +1,28 @@
+.input {
+  padding: 0.75rem;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #FFFFFF;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff !important;            /* колір тексту */
+  -webkit-box-shadow: 0 0 0px 1000px #0056ff inset !important; /* фон вашого банера */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.input:-moz-autofill {
+  box-shadow: 0 0 0px 1000px #0056ff inset !important;
+  -moz-text-fill-color: #fff !important;
+}

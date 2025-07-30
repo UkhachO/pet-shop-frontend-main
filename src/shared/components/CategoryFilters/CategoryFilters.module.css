@@ -1,0 +1,46 @@
+/* src/shared/components/Filters/CategoryFilters.module.css */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  accent-color: #0D50FF; 
+}
+
+.input,
+.select {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+}
+
+
+.input {
+  width: 80px;
+  border: 1px solid #DDDDDD;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+option {
+  color: #8B8B8B;
+}

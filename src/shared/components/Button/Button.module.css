@@ -1,0 +1,39 @@
+.button {
+  font-family: "Montserrat", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.primary {
+  background-color: #007bff;
+  color: #fff;
+}
+.primary:hover {
+  background-color: #0056b3;
+}
+
+.secondary {
+  background-color: #f3f4f6;
+  color: #333;
+}
+.secondary:hover {
+  background-color: #e1e3e6;
+}
+
+.link {
+  background: none;
+  color: #007bff;
+  padding: 0;
+}
+.link:hover {
+  text-decoration: underline;
+}

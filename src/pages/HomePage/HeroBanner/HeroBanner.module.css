@@ -1,0 +1,22 @@
+.banner {
+  background: url("../../../assets/hero-baner.png") center/cover no-repeat;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.content {
+  width: 65%;
+  margin-left: 4vw;
+  color: white;
+  margin-bottom: 6rem;
+}
+.content h1 {
+  font-weight: 700;
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+}
+.content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}

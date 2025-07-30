@@ -1,0 +1,56 @@
+/* src/pages/NotFoundPage/NotFoundPage.module.css */
+
+.page {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.digit {
+  font-size: 9rem;            /* приблизно 128px */
+  font-weight: bold;
+  color: #0d50ff;
+  line-height: 1;
+}
+
+.image {
+  width: 15%;
+  height: auto;
+}
+
+.title {
+  font-size: 3rem;         /* приблизно 36px */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #282828;
+}
+
+.message {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #0d50ff;
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #0b44d3;
+}

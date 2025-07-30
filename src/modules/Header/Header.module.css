@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo a svg {
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #007bff;
+}
+
+.cartLink {
+  position: relative; /* для позиціонування бейджа */
+  display: inline-block;
+}
+
+.cartLink svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* Бейдж з лічильником */
+.badge {
+  position: absolute;
+  top: -6px;
+  left: -6px;         /* було right: -6px; */
+  background-color: #0d50ff;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 12px;
+}

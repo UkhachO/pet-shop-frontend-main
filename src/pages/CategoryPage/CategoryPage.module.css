@@ -1,0 +1,49 @@
+.page {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.loader {
+  text-align: center;
+  padding: 2rem;
+}
+
+
+.heading {
+  font-weight: 700;
+  font-size: 4rem;
+  margin: 0 0 1rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.filterItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.input,
+.select {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.input {
+  width: 80px;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.noItems {
+  font-style: italic;
+  color: #666;
+}

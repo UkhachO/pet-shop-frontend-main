@@ -1,0 +1,48 @@
+/* src/pages/CategoriesPage/CategoriesPage.module.css */
+
+.page {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.loader {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* грід із 4 колонок, будь-яка кількість рядків */
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.catWrapper {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catWrapper:hover {
+  transform: translateY(-4px);
+}
+
+.selected {
+  box-shadow: 0 0 0 3px #0d50ff;
+  transform: translateY(-2px);
+}
+
+/* сітка товарів під категорією */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.noItems {
+  padding: 1rem;
+  font-style: italic;
+  color: #555;
+}

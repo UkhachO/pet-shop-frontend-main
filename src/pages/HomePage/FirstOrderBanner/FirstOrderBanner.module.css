@@ -1,0 +1,85 @@
+.banner {
+  position: relative;
+  background-color: #0056ff;
+  border-radius: 8px;
+  padding: 2rem 1rem 3rem; /* паддінг для заголовка, форми та місця під тварин */
+  color: #fff;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 360px;
+  margin: 0 auto;
+  position: relative;
+  left: 32%;
+  z-index: 1;
+}
+
+.input {
+  color: #FFFFFF;
+}
+
+.button {
+  background-color: #FFFFFF;
+  color: #282828;
+}
+
+.submitted {
+  background-color: #F1F3F4;
+  color: #0D50FF;
+}
+
+.submitted:hover {
+  background-color: #F1F3F4;
+  color: #0D50FF;
+}
+
+.button:hover {
+  background-color: #282828;
+  color: #FFFFFF;
+}
+
+.animalsImage {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+ width: 60%;
+  transform: translateX(-50%);
+  height: 85%; /* підкоригуйте за потреби */
+  pointer-events: none; /* щоб інпути та кнопка були клікабельні */
+}
+
+.toast {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(255,255,255,0.95);
+  color: #0056ff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-weight: bold;
+  z-index: 100;
+  animation: fadeInOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0%   { opacity: 0; transform: translateY(-10px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  90%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+

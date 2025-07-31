@@ -17,17 +17,16 @@ h2 {
 }
 
 .title {
-  font-size:3.2rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: #222;
 }
-
 
 .link {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  color: #8B8B8B;
+  color: #8b8b8b;
 }
 
 .link:hover {

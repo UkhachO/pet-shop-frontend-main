@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem, clearCart, addItem } from "../../redux/cart-slice";
@@ -6,13 +6,12 @@ import SectionTitle from "../../shared/components/SectionTitle/SectionTitle";
 import Button from "../../shared/components/Button/Button";
 import styles from "./CartPage.module.css";
 
-export default function CartPage() {
+const CartPage = () => {
   const dispatch = useDispatch();
   const items = useSelector((s) => s.cart.items);
 
-  // distinct count — кількість різних продуктів
   const totalItems = items.length;
-  // totalSum залишається сумою quantity * price
+
   const totalSum = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
@@ -169,4 +168,6 @@ export default function CartPage() {
       )}
     </main>
   );
-}
+};
+
+export default CartPage;

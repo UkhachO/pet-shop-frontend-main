@@ -1,12 +1,10 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Header.module.css";
 import Logo from "../../shared/components/icons/Logo";
 import Basket from "../../shared/components/icons/Basket";
 
-export default function Header() {
-  // Кількість різних товарів у кошику
+const Header = () => {
   const distinctCount = useSelector((state) => state.cart.items.length);
 
   return (
@@ -34,4 +32,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

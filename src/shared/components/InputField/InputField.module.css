@@ -1,6 +1,6 @@
 .input {
   padding: 0.75rem;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   background: transparent;
   color: #fff;
@@ -10,15 +10,15 @@
 }
 
 .input::placeholder {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .input:-webkit-autofill,
 .input:-webkit-autofill:hover,
 .input:-webkit-autofill:focus,
 .input:-webkit-autofill:active {
-  -webkit-text-fill-color: #fff !important;            /* колір тексту */
-  -webkit-box-shadow: 0 0 0px 1000px #0056ff inset !important; /* фон вашого банера */
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #0056ff inset !important;
   transition: background-color 5000s ease-in-out 0s;
 }
 

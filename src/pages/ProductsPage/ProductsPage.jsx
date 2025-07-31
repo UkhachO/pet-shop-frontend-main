@@ -1,6 +1,4 @@
-// src/pages/ProductsPage/ProductsPage.jsx
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SectionTitle from "../../shared/components/SectionTitle/SectionTitle";
 import ProductCard from "../ProductPage/ProductCard/ProductCard";
@@ -10,7 +8,7 @@ import Breadcrumbs from "../../shared/components/Breadcrumbs/Breadcrumbs";
 import CategoryFilters from "../../shared/components/CategoryFilters/CategoryFilters";
 import styles from "./ProductsPage.module.css";
 
-export default function ProductsPage() {
+const ProductsPage = () => {
   const dispatch = useDispatch();
   const {
     list: products,
@@ -18,24 +16,20 @@ export default function ProductsPage() {
     error,
   } = useSelector((state) => state.products);
 
-  // стани фільтрів
   const [priceFrom, setPriceFrom] = useState("");
   const [priceTo, setPriceTo] = useState("");
   const [onlyDiscounted, setOnlyDiscounted] = useState(false);
   const [sortBy, setSortBy] = useState("default");
 
-  // пагінація
   const itemsPerPage = 12;
   const [currentPage, setCurrentPage] = useState(1);
 
-  // завантаження
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchProducts());
     }
   }, [status, dispatch]);
 
-  // поки завантажується
   if (status === "loading") {
     return (
       <main className={styles.page}>
@@ -53,7 +47,6 @@ export default function ProductsPage() {
     );
   }
 
-  // 1. застосовуємо фільтри до всіх продуктів
   let filtered = products.slice();
 
   if (priceFrom !== "") {
@@ -81,11 +74,9 @@ export default function ProductsPage() {
       );
       break;
     default:
-      // "default" — без сортування
       break;
   }
 
-  // 2. пагінація вже відфільтрованих
   const totalPages = Math.ceil(filtered.length / itemsPerPage);
   const paginated = filtered.slice(
     (currentPage - 1) * itemsPerPage,
@@ -96,7 +87,6 @@ export default function ProductsPage() {
     <main className={styles.page}>
       <Breadcrumbs />
 
-      {/* ФІЛЬТРИ */}
       <CategoryFilters
         priceFrom={priceFrom}
         priceTo={priceTo}
@@ -110,7 +100,6 @@ export default function ProductsPage() {
 
       <SectionTitle title="All Products" />
 
-      {/* Сітка продуктів */}
       {paginated.length > 0 ? (
         <div className={styles.grid}>
           {paginated.map((prod) => (
@@ -121,7 +110,6 @@ export default function ProductsPage() {
         <p className={styles.noItems}>No products found.</p>
       )}
 
-      {/* ПАГІНАЦІЯ */}
       {totalPages > 1 && (
         <Pagination
           currentPage={currentPage}
@@ -131,4 +119,6 @@ export default function ProductsPage() {
       )}
     </main>
   );
-}
+};
+
+export default ProductsPage;

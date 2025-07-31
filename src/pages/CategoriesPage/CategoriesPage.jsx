@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // ← імпорт Link
 import CategoryCard from "./CategoryCard/CategoryCard";
 import ProductCard from "../ProductPage/ProductCard/ProductCard";
@@ -7,7 +7,7 @@ import { getCategories, getProducts } from "../../api/api";
 import Breadcrumbs from "../../shared/components/Breadcrumbs/Breadcrumbs";
 import styles from "./CategoriesPage.module.css";
 
-export default function CategoriesPage() {
+const CategoriesPage = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
@@ -37,17 +37,17 @@ export default function CategoriesPage() {
 
   return (
     <main className={styles.page}>
-      <Breadcrumbs/>
+      <Breadcrumbs />
       <Section title="Categories">
         <div className={styles.categoriesGrid}>
           {categories.map((cat) => (
             <Link
               key={cat.id}
-              to={`/categories/${cat.id}`} // ← лінк на сторінку категорії
+              to={`/categories/${cat.id}`}
               className={`${styles.catWrapper} ${
                 selectedCategoryId === cat.id ? styles.selected : ""
               }`}
-              onClick={() => setSelectedCategoryId(cat.id)} // щоб підсвітити в UI
+              onClick={() => setSelectedCategoryId(cat.id)}
             >
               <CategoryCard {...cat} />
             </Link>
@@ -81,4 +81,6 @@ export default function CategoriesPage() {
       )}
     </main>
   );
-}
+};
+
+export default CategoriesPage;

@@ -1,5 +1,3 @@
-/* src/pages/ProductPage/ProductPage.module.css */
-
 .page {
   max-width: 1200px;
   margin: 2rem auto;
@@ -12,7 +10,6 @@
   gap: 2rem;
 }
 
-/* Галерея */
 .gallery {
   display: flex;
   gap: 1rem;
@@ -62,7 +59,6 @@
   border-radius: 8px;
 }
 
-/* Деталі */
 .details {
   display: flex;
   flex-direction: column;
@@ -103,7 +99,6 @@
   align-self: flex-start;
 }
 
-/* Кількість та кнопка */
 .controls {
   display: flex;
   align-items: center;
@@ -157,7 +152,6 @@
   color: #fff;
 }
 
-/* Опис */
 .description h2 {
   margin: 0 0 0.5rem;
   font-size: 1.25rem;

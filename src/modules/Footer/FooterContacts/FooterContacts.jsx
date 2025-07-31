@@ -3,7 +3,7 @@ import contacts from "../../../data/contacts";
 import InstagramIcon from "../../../shared/components/icons/InstagramIcon";
 import WhatsappIcon from "../../../shared/components/icons/WhatsappIcon";
 
-function FooterContacts() {
+const FooterContacts = () => {
   const { phone, address, hours, socials } = contacts;
 
   return (
@@ -36,6 +36,6 @@ function FooterContacts() {
       </div>
     </div>
   );
-}
+};
 
 export default FooterContacts;

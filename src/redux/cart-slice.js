@@ -1,4 +1,3 @@
-// src/redux/cart-slice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const stored = localStorage.getItem("cartItems");
@@ -7,7 +6,7 @@ const initialItems = stored ? JSON.parse(stored) : [];
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: initialItems, // кожен елемент: { id, name, image, price, originalPrice, quantity }
+    items: initialItems,
   },
   reducers: {
     addItem(state, action) {

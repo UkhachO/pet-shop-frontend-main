@@ -1,20 +1,17 @@
-// src/pages/CategoryPage/CategoryPage.jsx
-
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getCategories, getProducts } from "../../api/api";
 import ProductCard from "../ProductPage/ProductCard/ProductCard";
 import Breadcrumbs from "../../shared/components/Breadcrumbs/Breadcrumbs";
 import CategoryFilters from "../../shared/components/CategoryFilters/CategoryFilters";
 import styles from "./CategoryPage.module.css";
 
-export default function CategoryPage() {
+const CategoryPage = () => {
   const { id } = useParams();
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // filter states
   const [priceFrom, setPriceFrom] = useState("");
   const [priceTo, setPriceTo] = useState("");
   const [onlyDiscounted, setOnlyDiscounted] = useState(false);
@@ -42,13 +39,11 @@ export default function CategoryPage() {
     return <div className={styles.loader}>Loading...</div>;
   }
 
-  // find our category
   const currentCat = categories.find((c) => String(c.id) === id);
-  // pick the right field: name or title or label
+
   const catName =
     currentCat?.name ?? currentCat?.title ?? currentCat?.label ?? "Category";
 
-  // filter products to this category
   let items = products.filter((p) => String(p.categoryId) === id);
 
   if (priceFrom !== "") items = items.filter((p) => p.price >= +priceFrom);
@@ -104,4 +99,6 @@ export default function CategoryPage() {
       )}
     </main>
   );
-}
+};
+
+export default CategoryPage;

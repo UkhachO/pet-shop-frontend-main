@@ -1,6 +1,4 @@
-// src/pages/ProductPage/ProductPage.jsx
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductById } from "../../redux/productsSlice";
@@ -65,7 +63,7 @@ export default function ProductPage() {
       })
     );
     setAdded(true);
-    // скинути назад через 5 секунд
+
     setTimeout(() => setAdded(false), 5000);
   };
 

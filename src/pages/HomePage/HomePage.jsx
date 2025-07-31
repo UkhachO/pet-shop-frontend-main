@@ -10,7 +10,6 @@ import FirstOrderBanner from "./FirstOrderBanner/FirstOrderBanner";
 import { getCategories, getProducts } from "../../api/api";
 import styles from "./HomePage.module.css";
 
-// «Розпаковує» відповідь API, якщо вона приходить обгорнута в { data: […] } чи { categories: […] }
 function extractArray(payload) {
   if (Array.isArray(payload)) return payload;
   if (payload.categories && Array.isArray(payload.categories))
@@ -19,7 +18,7 @@ function extractArray(payload) {
   return [];
 }
 
-export default function HomePage() {
+const HomePage = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,11 +45,8 @@ export default function HomePage() {
     return <div className={styles.loader}>Loading...</div>;
   }
 
-  // Перші 4 категорії
   const displayedCategories = categories.slice(0, 4);
 
-  // Перші 4 товари зі знижкою (як у SalePage)
-  // Змініть поле `discount` на `discountPercentage` або інше, якщо у вас інакше
   const displayedSale = products.filter((p) => p.discont_price > 0).slice(0, 4);
 
   return (
@@ -58,7 +54,6 @@ export default function HomePage() {
       <HeroBanner />
 
       <div className={styles.container}>
-        {/* Categories */}
         <Section
           title="Categories"
           linkText="All categories "
@@ -75,10 +70,8 @@ export default function HomePage() {
           )}
         </Section>
 
-        {/* 5% off banner */}
         <FirstOrderBanner />
 
-        {/* Sale */}
         <Section title="Sale" linkText="All sales" linkTo="/sale">
           {displayedSale.length > 0 ? (
             displayedSale.map((prod) => (
@@ -93,4 +86,6 @@ export default function HomePage() {
       </div>
     </main>
   );
-}
+};
+
+export default HomePage;

@@ -1,6 +1,4 @@
-// src/shared/components/ProductCard/ProductCard.jsx
-
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../../redux/cart-slice";
@@ -10,13 +8,7 @@ function formatPrice(value) {
   return Number.isInteger(value) ? value.toString() : value.toFixed(2);
 }
 
-export default function ProductCard({
-  id,
-  title,
-  price,
-  image,
-  discont_price,
-}) {
+const ProductCard = ({ id, title, price, image, discont_price }) => {
   const dispatch = useDispatch();
   const BASE = import.meta.env.VITE_API_URL || "";
   const src = image.startsWith("http") ? image : `${BASE}${image}`;
@@ -44,7 +36,7 @@ export default function ProductCard({
       })
     );
     setAdded(true);
-    // Повернути кнопку назад через 2 секунди
+
     setTimeout(() => setAdded(false), 2000);
   };
 
@@ -79,4 +71,6 @@ export default function ProductCard({
       </div>
     </Link>
   );
-}
+};
+
+export default ProductCard;

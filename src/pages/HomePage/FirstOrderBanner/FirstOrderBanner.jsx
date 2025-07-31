@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./FirstOrderBanner.module.css";
 import InputField from "../../../shared/components/InputField/InputField";
 import Button from "../../../shared/components/Button/Button";
 
-import animalsImage from "../../../assets/FirstOrderBanner.png"; // Adjust the path as needed
+import animalsImage from "../../../assets/FirstOrderBanner.png";
 
-export default function FirstOrderBanner() {
+const FirstOrderBanner = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
   const [showToast, setShowToast] = useState(false);
@@ -15,12 +15,11 @@ export default function FirstOrderBanner() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: тут відправка на бекенд
+
     setSubmitted(true);
     setShowToast(true);
   };
 
-  // Ховаємо тост через 3 сек
   useEffect(() => {
     if (showToast) {
       const timer = setTimeout(() => setShowToast(false), 3000);
@@ -66,7 +65,6 @@ export default function FirstOrderBanner() {
         </Button>
       </form>
 
-      {/* Тост-повідомлення */}
       {showToast && (
         <div className={styles.toast}>
           Your request has been submitted successfully!
@@ -81,4 +79,6 @@ export default function FirstOrderBanner() {
       />
     </div>
   );
-}
+};
+
+export default FirstOrderBanner;

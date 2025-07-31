@@ -1,5 +1,3 @@
-// src/shared/components/Breadcrumbs/Breadcrumbs.jsx
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -20,16 +18,14 @@ function capitalizeSegment(seg) {
     .join(" ");
 }
 
-export default function Breadcrumbs() {
+const Breadcrumbs = () => {
   const { pathname } = useLocation();
   let parts = pathname.split("/").filter(Boolean);
 
-  // якщо /products/all – відображаємо лише «products»
   if (parts[0] === "products" && parts[1] === "all") {
     parts = ["products"];
   }
 
-  // підтягуємо категорії
   const [categoryMap, setCategoryMap] = useState({});
   const [catsLoading, setCatsLoading] = useState(true);
   useEffect(() => {
@@ -45,9 +41,7 @@ export default function Breadcrumbs() {
       .finally(() => setCatsLoading(false));
   }, []);
 
-  // беремо весь список продуктів (якщо він вже є)
   const products = useSelector((s) => s.products.list);
-  // і поточний завантажений продукт
   const current = useSelector((s) => s.products.current);
 
   const crumbs = [{ name: "Main page", to: "/" }];
@@ -57,24 +51,19 @@ export default function Breadcrumbs() {
     let label;
 
     if (prev === "categories") {
-      // крихта категорії
       label = catsLoading
         ? "Loading..."
         : categoryMap[part] || capitalizeSegment(part);
-    } else if (prev === "products" && part !== "all") {
-      // крихта продукту
-      // спочатку шукаємо в products.list
+    } else if (prev === "products" && /^\d+$/.test(part)) {
       const fromList = products.find((p) => String(p.id) === part);
       if (fromList) {
         label = fromList.title || fromList.name;
       } else if (current && String(current.id) === part) {
-        // інакше беремо з current
         label = current.title || current.name;
       } else {
-        label = part; // fallback
+        label = part;
       }
     } else {
-      // інші сегменти
       label = nameMap[part] || capitalizeSegment(part);
     }
 
@@ -104,4 +93,6 @@ export default function Breadcrumbs() {
       })}
     </nav>
   );
-}
+};
+
+export default Breadcrumbs;

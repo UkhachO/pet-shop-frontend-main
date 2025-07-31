@@ -27,7 +27,7 @@
 }
 
 .cartLink {
-  position: relative; /* для позиціонування бейджа */
+  position: relative;
   display: inline-block;
 }
 
@@ -36,11 +36,10 @@
   height: 40px;
 }
 
-/* Бейдж з лічильником */
 .badge {
   position: absolute;
   top: -6px;
-  left: -6px;         /* було right: -6px; */
+  left: -6px;
   background-color: #0d50ff;
   color: #fff;
   font-size: 0.75rem;

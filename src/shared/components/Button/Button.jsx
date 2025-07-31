@@ -1,17 +1,16 @@
 import styles from "./Button.module.css";
-import clsx from "clsx"; 
-export default function Button({
+import clsx from "clsx";
+const Button = ({
   children,
   variant = "primary",
   to,
   onClick,
   className,
   ...rest
-}) {
+}) => {
   const classNames = clsx(styles.button, styles[variant], className);
 
   if (to) {
-    
     return (
       <a href={to} className={classNames} {...rest}>
         {children}
@@ -24,4 +23,6 @@ export default function Button({
       {children}
     </button>
   );
-}
+};
+
+export default Button;

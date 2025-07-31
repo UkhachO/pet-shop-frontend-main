@@ -2,8 +2,7 @@
   position: relative;
   background-color: #0056ff;
   border-radius: 8px;
-  padding: 2rem 1rem 3rem; /* паддінг для заголовка, форми та місця під тварин */
-  color: #fff;
+  padding: 2rem 1rem 3rem;
   overflow: hidden;
 }
 
@@ -13,7 +12,6 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
-
 
 .form {
   display: flex;
@@ -29,57 +27,68 @@
 }
 
 .input {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .button {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #282828;
 }
 
 .submitted {
-  background-color: #F1F3F4;
-  color: #0D50FF;
+  background-color: #f1f3f4;
+  color: #0d50ff;
 }
 
 .submitted:hover {
-  background-color: #F1F3F4;
-  color: #0D50FF;
+  background-color: #f1f3f4;
+  color: #0d50ff;
 }
 
 .button:hover {
   background-color: #282828;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .animalsImage {
   position: absolute;
   bottom: 0;
   left: 30%;
- width: 60%;
+  width: 60%;
   transform: translateX(-50%);
-  height: 85%; /* підкоригуйте за потреби */
-  pointer-events: none; /* щоб інпути та кнопка були клікабельні */
+  height: 85%;
+  pointer-events: none;
 }
 
 .toast {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(255, 255, 255, 0.95);
   color: #0056ff;
   padding: 0.75rem 1rem;
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-weight: bold;
   z-index: 100;
   animation: fadeInOut 3s ease-in-out forwards;
 }
 
 @keyframes fadeInOut {
-  0%   { opacity: 0; transform: translateY(-10px); }
-  10%  { opacity: 1; transform: translateY(0); }
-  90%  { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-10px); }
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
-

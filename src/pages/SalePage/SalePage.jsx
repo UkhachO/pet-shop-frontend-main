@@ -1,6 +1,4 @@
-// src/pages/SalePage/SalePage.jsx
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SectionTitle from "../../shared/components/SectionTitle/SectionTitle";
 import ProductCard from "../ProductPage/ProductCard/ProductCard";
@@ -8,7 +6,7 @@ import { fetchProducts } from "../../redux/productsSlice";
 import Breadcrumbs from "../../shared/components/Breadcrumbs/Breadcrumbs";
 import styles from "./SalePage.module.css";
 
-export default function SalePage() {
+const SalePage = () => {
   const dispatch = useDispatch();
   const {
     list: products,
@@ -16,7 +14,6 @@ export default function SalePage() {
     error,
   } = useSelector((state) => state.products);
 
-  // локальні стани для фільтрів
   const [priceFrom, setPriceFrom] = useState("");
   const [priceTo, setPriceTo] = useState("");
   const [sortBy, setSortBy] = useState("default");
@@ -25,14 +22,12 @@ export default function SalePage() {
     if (status === "idle") dispatch(fetchProducts());
   }, [status, dispatch]);
 
-  // спочатку беремо лише товари зі знижкою
   const saleItems = products.filter((prod) => {
     const price = Number(prod.price);
     const sale = Number(prod.discont_price);
     return sale > 0 && sale < price;
   });
 
-  // застосовуємо Price-фільтри
   let filtered = saleItems.slice();
   if (priceFrom !== "") {
     filtered = filtered.filter((p) => p.price >= Number(priceFrom));
@@ -41,7 +36,6 @@ export default function SalePage() {
     filtered = filtered.filter((p) => p.price <= Number(priceTo));
   }
 
-  // застосовуємо сортування
   if (sortBy === "price-asc") {
     filtered.sort((a, b) => a.price - b.price);
   } else if (sortBy === "price-desc") {
@@ -58,7 +52,6 @@ export default function SalePage() {
 
       <SectionTitle title="Discounted items" />
 
-      {/* ——— ФІЛЬТРИ (як на скрині) ——— */}
       <div className={styles.filters}>
         <div className={styles.filterItem}>
           <label className={styles.label}>Price</label>
@@ -106,4 +99,6 @@ export default function SalePage() {
       ) : null}
     </main>
   );
-}
+};
+
+export default SalePage;

@@ -1,10 +1,8 @@
-// src/pages/NotFoundPage/NotFoundPage.jsx
-
 import { Link } from "react-router-dom";
 import styles from "./NotFoundPage.module.css";
-import puppyImg from "../../assets/puppy.png"; // помістіть зображення цуценяти в цей шлях
+import puppyImg from "../../assets/puppy.png";
 
-export default function NotFoundPage() {
+const NotFoundPage = () => {
   return (
     <main className={styles.page}>
       <div className={styles.numbers}>
@@ -25,4 +23,6 @@ export default function NotFoundPage() {
       </Link>
     </main>
   );
-}
+};
+
+export default NotFoundPage;

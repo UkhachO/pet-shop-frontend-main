@@ -1,6 +1,6 @@
 import styles from "./CategoryFilters.module.css";
 
-export default function CategoryFilters({
+const CategoryFilters = ({
   priceFrom,
   priceTo,
   onlyDiscounted,
@@ -9,7 +9,7 @@ export default function CategoryFilters({
   onPriceToChange,
   onOnlyDiscountedChange,
   onSortByChange,
-}) {
+}) => {
   return (
     <div className={styles.filters}>
       <div className={styles.filterItem}>
@@ -54,4 +54,6 @@ export default function CategoryFilters({
       </div>
     </div>
   );
-}
+};
+
+export default CategoryFilters;

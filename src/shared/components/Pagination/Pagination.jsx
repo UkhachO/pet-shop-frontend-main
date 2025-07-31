@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./Pagination.module.css";
 
-export default function Pagination({ currentPage, totalPages, onPageChange }) {
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
@@ -31,4 +30,6 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       </button>
     </nav>
   );
-}
+};
+
+export default Pagination;
